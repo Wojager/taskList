@@ -1,0 +1,31 @@
+
+<h2>Lista zadań</h2>
+{{remain()}} out of {{todos.length}}
+<br>
+dodaj zadanie <input type = "text" [(ngModel)] = 'newTodoTitle' (keyup.enter) = 'addTodo()'/>
+
+<button type = 'submit' (click) = addTodo()>dodaj</button>
+<br>
+ <button type = 'sort' (click) = sortA()>sortA-Z</button>
+ <button type = 'sort' (click) = sortZ()>sortZ-A</button>
+ <button type = 'sort' (click) = sortUp()>sort date up</button>
+ <button type = 'sort' (click) = sortDown()>sort date down</button>
+
+  <label>
+      <input [(ngModel)]="searchText" placeholder="search text goes here">
+      <br>
+      <ul style = "list-style-type: none">
+        <li *ngFor = "let todo of todos | searchFilter : searchText; let i = index">
+            <input type = "checkbox" class = "checkbox" [(ngModel)] = "todo.complete"/>
+    <span [ngClass] = '{checked : todo.complete}'>{{todo.title}}, dodane o  {{todo.date | date: 'dd MMMM hh:mm:ss'}}</span>
+    <span (click) = 'deleteTodo(i)' class = "deleteIcon">[(X)]</span>
+        </li>
+      </ul>
+    </label>
+      
+<!-- <ul style = "list-style-type: none">
+  <li *ngFor = 'let todo of todos | searchFilter : searchText'  >
+  </li>
+</ul> -->
+
+
