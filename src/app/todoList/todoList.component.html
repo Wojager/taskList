@@ -1,7 +1,6 @@
-<h2>
-  Tasks list</h2>
+<h2>Tasks list</h2>
 {{ remain() }} out of {{ todos.length }}
-<br> Add task
+Add task
 <input type="text" [(ngModel)]="newTodoTitle" (keyup.enter)="addTodo()" />
 
 <button type="submit" (click)="addTodo()">add</button>

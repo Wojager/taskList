@@ -22,4 +22,5 @@ import { FilterPipe } from './todoList/pipeTodoList';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

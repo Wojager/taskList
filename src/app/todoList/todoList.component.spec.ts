@@ -13,7 +13,7 @@ describe('TodoListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TodoListComponent]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

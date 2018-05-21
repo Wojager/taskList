@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
+import { Todo } from './objectTodo'
 
 @Component({
   selector: 'appTodoList',
@@ -18,7 +19,7 @@ export class TodoListComponent {
   }
 
   addTodo() {
-    if (this.newTodoTitle) { 
+    if (this.newTodoTitle) {
       const newTodo: Todo = {
         title: this.newTodoTitle,
         date: new Date(),
@@ -32,28 +33,16 @@ export class TodoListComponent {
   deleteTodo(i) {
     this.todos.splice(i, 1);
   }
-
   sortA() {
     this.todos = this.todos.sort((a, b) => a.title.localeCompare(b.title));
   }
-
   sortZ() {
     this.todos = this.todos.sort((a, b) => b.title.localeCompare(a.title));
   }
-
   sortUp() {
     this.todos = this.todos.sort((a, b) => a.date.getTime() - b.date.getTime());
   }
-
   sortDown() {
     this.todos = this.todos.sort((a, b) => b.date.getTime() - a.date.getTime());
   }
-}
-
-
-
-interface Todo {
-  title: string;
-  date: Date;
-  complete: boolean;
 }

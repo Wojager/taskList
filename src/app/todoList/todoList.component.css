@@ -9,3 +9,7 @@ h2 {
 ul {
   list-style-type: none;
 }
+
+button {
+  cursor: pointer;
+}
