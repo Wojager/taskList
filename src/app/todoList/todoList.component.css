@@ -1,8 +1,11 @@
 h2 {
-    color:red;
+  color:red;
 }
 
 .deleteIcon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+ul {
+  list-style-type: none;
+}

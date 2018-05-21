@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todoList/todoList.component';
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
-import { FilterPipe} from './todoList/todoList.component';
+import { FilterPipe } from './todoList/pipeTodoList';
 
 @NgModule({
   declarations: [
