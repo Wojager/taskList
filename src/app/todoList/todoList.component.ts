@@ -29,20 +29,25 @@ export class TodoListComponent {
       this.newTodoTitle = '';
     }
   }
-
+  
   deleteTodo(i) {
     this.todos.splice(i, 1);
   }
+
   sortA() {
     this.todos = this.todos.sort((a, b) => a.title.localeCompare(b.title));
   }
+
   sortZ() {
     this.todos = this.todos.sort((a, b) => b.title.localeCompare(a.title));
   }
+
   sortUp() {
     this.todos = this.todos.sort((a, b) => a.date.getTime() - b.date.getTime());
   }
+
   sortDown() {
     this.todos = this.todos.sort((a, b) => b.date.getTime() - a.date.getTime());
   }
+
 }
