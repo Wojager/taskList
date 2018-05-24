@@ -6,11 +6,10 @@ import { Todo } from './objectTodo'
     name: 'searchFilter'
   })
   export class FilterPipe implements PipeTransform {
-    transform(todos, searchText): Todo[] {
-      if (!todos) return [];
-        if (!searchText) return todos;
-          searchText = searchText.toLowerCase();
-          return todos.filter(todo => todo.title.toLowerCase().includes(searchText));
+    transform(todos = [], searchText): Todo[] {
+      if (todos && searchText) {
+        return todos.filter(todo => todo.title.toLowerCase().includes(searchText.toLowerCase()));
+      }
+      return todos;
     }
   }
-
